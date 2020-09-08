@@ -21,12 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "ENDPOINT", "\"https://restcountries.eu/rest/v2/\""
         }
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "ENDPOINT", "\"https://restcountries.eu/rest/v2/\""
 
-        }
     }
 
 }

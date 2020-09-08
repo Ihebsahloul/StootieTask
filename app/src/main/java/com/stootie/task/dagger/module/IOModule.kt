@@ -3,11 +3,10 @@ package com.stootie.task.dagger.module
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.stootie.data.Endpoint
-import com.stootie.domain.global.Constants
-import com.stootie.task.BuildConfig.ENDPOINT
+import com.stootie.data.global.Constants
+import com.stootie.task.BuildConfig
 import dagger.Module
 import dagger.Provides
-import io.reactivex.android.BuildConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

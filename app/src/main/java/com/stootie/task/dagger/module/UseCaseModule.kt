@@ -1,6 +1,7 @@
 package com.stootie.task.dagger.module
 
 import com.stootie.data.repository.CountriesRepository
+import com.stootie.domain.countries.GetCountriesListUseCase
 import dagger.Module
 import dagger.Provides
 import io.reactivex.Scheduler
@@ -23,6 +24,6 @@ class UseCaseModule {
 
   @Provides
   @Singleton
-  internal fun provideGetArticlesListUseCase(articlesRepository: CountriesRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named("mainThreadScheduler") mainThreadScheduler: Scheduler): GetArticlesListUseCase =
+  internal fun provideGetCountriesListUseCase(articlesRepository: CountriesRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named("mainThreadScheduler") mainThreadScheduler: Scheduler): GetCountriesListUseCase =
     GetCountriesListUseCase(articlesRepository, ioScheduler, mainThreadScheduler)
 }

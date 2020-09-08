@@ -1,4 +1,4 @@
-package com.stootie.domain.global
+package com.stootie.data.global
 
 class Constants {
 
