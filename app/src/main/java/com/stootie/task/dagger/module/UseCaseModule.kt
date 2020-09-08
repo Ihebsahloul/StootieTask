@@ -24,6 +24,6 @@ class UseCaseModule {
 
   @Provides
   @Singleton
-  internal fun provideGetCountriesListUseCase(articlesRepository: CountriesRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named("mainThreadScheduler") mainThreadScheduler: Scheduler): GetCountriesListUseCase =
-    GetCountriesListUseCase(articlesRepository, ioScheduler, mainThreadScheduler)
+  internal fun provideGetCountriesListUseCase(countriesRepository: CountriesRepository, @Named("ioScheduler") ioScheduler: Scheduler, @Named("mainThreadScheduler") mainThreadScheduler: Scheduler): GetCountriesListUseCase =
+    GetCountriesListUseCase(countriesRepository, ioScheduler, mainThreadScheduler)
 }
