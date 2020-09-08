@@ -1,7 +1,7 @@
 package com.stootie.task.dagger.component
 
 import android.content.Context
-import com.stootie.data.Endpoint
+import com.stootie.data.ApiInterface
 import com.stootie.domain.countries.GetCountriesListUseCase
 import com.stootie.task.StootieApp
 import com.stootie.task.dagger.module.AppModule
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 interface AppComponent {
   fun inject(app: StootieApp)
   fun getApplicationContext(): Context
-  fun getEndpoint(): Endpoint
+  fun getEndpoint(): ApiInterface
 
   fun getCountriesListUseCase(): GetCountriesListUseCase
 }
