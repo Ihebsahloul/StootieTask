@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="color_primary">#0075cf</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="color_primary_dark">#7C4B97</color>
+    <color name="black_transparent_gradient">#99000000</color>
+
+    <color name="color_accent">#6B6B6B</color>
+
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+    <color name="color_primary_secondary">#0a5687</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="imgPlaceholder">#ffffff</color>
+
+    <!-- toolbar colors -->
+    <color name="red_toolbar_color">#1075B9</color>
+    <color name="gray_toolbar_color">#4A4A4A</color>
+
+    <!-- Gold button -->
+    <color name="start_gold_color">#E99A14</color>
+    <color name="end_gold_color">#F7E03B</color>
+
+    <color name="play_text_color">#A86B00</color>
+    <color name="separator_color">#979797</color>
+    <color name="separator_light_color">#D2D2D2</color>
+    <color name="hint_color_text">#cad0d1</color>
+    <color name="radioButtonColor">#E0E0E0</color>
+    <color name="info_background_color">#F1F1F1</color>
+    <color name="underline_color">#8d8d8d</color>
+
+    <color name="green">#62B700</color>
+    <color name="orange">#FF9800</color>
+    <color name="gray">#9B9B9B</color>
+    <color name="btn_grey_color">#D8D8D8</color>
+    <color name="bg_gift_item_color">#F4F4F4</color>
+    <color name="text_color">#6B6B6B</color>
+    <color name="text_color_seconday">#fff</color>
+    <color name="text_color_grey">#9B9B9B</color>
+    <color name="facebook_btn_color">#3B5998</color>
+    <color name="purple">#8E24AA</color>
+    <color name="black_transparent">#000000</color>
+    <color name="blue">#039BE5</color>
+    <color name="red">#E40421</color>
+    <color name="blue_text_btn">#1E88E5</color>
+    <color name="bg_voucher_color">#F5F5F5</color>
+    <color name="green_maps">#008000</color>
+
+    <color name="blue_button_color">#1E88E5</color>
+
+    <color name="snack_bar_color">#575757</color>
+    <color name="default_hint_color">#C7C7CD</color>
+
+    <color name="theme_1">#74CFC5</color>
+    <color name="theme_2">#4DAEEE</color>
+    <color name="theme_3">#EA5964</color>
+    <color name="red_primary">#cc2c2f</color>
+    <color name="theme_4">#E5C063</color>
+    <color name="theme_5">#88C9BA</color>
+    <color name="theme_6">#CE9C6A</color>
+
+    <color name="dark_blue">#0C1844</color>
+    <color name="winner_color_number">#FFC107</color>
+    <color name="seconday_color">#FCD40A</color>
+
+
+    <color name="colorBlue">#000</color>
+    <color name="colorBlueclear">#494848</color>
+    <color name="black_1b">#1b1b1b</color>
+    <color name="colorBlueclear2">#737171</color>
+    <color name="colorBlueclear3">#8e8c8c</color>
+    <color name="colorHint">#aeaaaa</color>
+    <color name="primary">#dc000000</color>
+    <color name="grey">#C4C4C4</color>
+    <color name="grey_bg">#F5F4F4</color>
+    <color name="text_1">#a09f9f</color>
+    <color name="text_2">#7f7f7f</color>
+    <color name="text_3">#777676</color>
+    <color name="text_4">#5e5e5e</color>
+    <color name="text_5">#3b3b3b</color>
+    <color name="carbon_transparent_70">#70292a2e</color>
+    <color name="drawer_menu_checked_color">#e5ebf3</color>
+
+    <color name="main_background_color">#efefef</color>
+    <color name="main_card_color">#fafafa</color>
+    <color name="main_welcome_color">#4D000000</color>
+    <color name="hint_text_color">#9c9c9c</color>
+
+    <color name="drawer_background_color">#ffffff</color>
+    <color name="drawer_menu_unselected_color">#bfbfbf</color>
+    <color name="drawer_menu_text_color">#212121</color>
+
+    <color name="property_item_hint_color">#737373</color>
+    <color name="property_item_text_color">#4b4b4b</color>
+    <color name="property_item_line_color">#e0e0e0</color>
+
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#f64c73</color>
+    <color name="bg_screen2">#20d2bb</color>
+    <color name="bg_screen3">#3395ff</color>
+    <color name="bg_screen4">#c873f4</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
 </resources>
