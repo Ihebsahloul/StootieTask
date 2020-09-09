@@ -1,8 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Button
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/Widget.AppCompat.Button.Borderless"
-    android:textAlignment="textStart"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAllCaps="false"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:id="@+id/viewCard_valve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_bg">
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_2dp"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="@dimen/dimen_2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_15dp"
+                        android:layout_weight="0.1">
+
+                        <ImageView
+                            android:id="@+id/image_bg"
+                            android:layout_width="@dimen/dimen_40dp"
+                            android:layout_height="@dimen/dimen_40dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/notif_icon" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/main_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/alert_category_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_15dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/googlesans_bold"
+                            android:maxLines="2"
+                            android:padding="@dimen/dimen_5dp"
+                            android:text="@{valvesListResponseData.name}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dimen_12sp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/alert_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_4dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/googlesans_bold"
+                            android:maxLines="2"
+                            android:text="@{valvesListResponseData._id"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dimen_20sp"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/alert_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_0dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/googlesans_medium"
+                            android:maxLines="1"
+                            android:text="@{valvesListResponseData.number_valve}"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/dimen_13sp"
+                            android:visibility="visible" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/dimen_5dp"
+                    android:layout_marginBottom="@dimen/dimen_7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/alert_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_marginEnd="@dimen/dimen_5dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/dimen_10dp"
+                        android:paddingTop="@dimen/dimen_5dp"
+                        android:paddingEnd="@dimen/dimen_10dp"
+                        android:paddingBottom="@dimen/dimen_5dp"
+                        android:text="@{valvesListResponseData._id}"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/dimen_11sp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+</layout>

@@ -8,9 +8,9 @@ import dagger.Provides
 
 @Module
 class CountriesModule {
-    //@PerActivity
-    //@Provides
-   // internal fun provideArticlesPresenter(getArticlesListUseCase: GetCountriesListUseCase) = CountriesPresenter(getArticlesListUseCase)
+    @PerActivity
+    @Provides
+    internal fun provideArticlesPresenter(getArticlesListUseCase: GetCountriesListUseCase) = CountriesPresenter(getArticlesListUseCase)
 
 
 }
