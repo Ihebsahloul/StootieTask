@@ -3,35 +3,51 @@ package com.stootie.task.countries
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.stootie.domain.countries.model.Country
 import com.stootie.domain.countries.model.linkUri
 import com.stootie.task.R
+import com.stootie.task.countrydetail.CountryDetailActivity
+import kotlinx.android.synthetic.main.list_item_country.view.*
+import org.w3c.dom.Text
 
 
 class CountriesListAdapter(private val context: Context, private val countries: List<Country>) :
-  androidx.recyclerview.widget.RecyclerView.Adapter<CountriesListAdapter.ViewHolder>() {
+  RecyclerView.Adapter<ViewHolder>() {
 
-  class ViewHolder(val button: Button) : androidx.recyclerview.widget.RecyclerView.ViewHolder(button)
-
-  override fun onCreateViewHolder(parent: ViewGroup,
-                                  viewType: Int): ViewHolder {
-    val button = LayoutInflater.from(context)
-      .inflate(R.layout.list_item_country, parent, false) as Button
-    return ViewHolder(button)
+  // Gets the number of animals in the list
+  override fun getItemCount(): Int {
+    return countries.size
   }
 
+  // Inflates the item views
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    return ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_country, parent, false))
+  }
+
+  // Binds each animal in the ArrayList to a view
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-    holder.button.text = countries[position].name
-    holder.button.setOnClickListener {
-      countries[position].linkUri()?.let {
-        val intent = Intent(Intent.ACTION_VIEW, it)
-        startActivity(context, intent, null)
-      }
+    holder?.countryNameTv?.text = countries.get(position).name
+    holder.countryNameTv.setOnClickListener {
+      navigateToCountryDetail(position)
     }
   }
 
-  override fun getItemCount() = countries.size
+  private fun navigateToCountryDetail(position: Int) {
+    countries[position].linkUri()?.let {
+      val value: String? = countries.get(position).name
+      val intent = Intent(context, CountryDetailActivity::class.java)
+      intent.putExtra("email", value)
+      context.startActivity( intent)
+    }
+  }
+}
+
+class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+  // Holds the TextView that will add each animal to
+  val countryNameTv = view.country_name_tv
+  val countryNumericTv = view.country_numeric_tv
+  val countryFlagIv = view.country_flag_iv
 }
