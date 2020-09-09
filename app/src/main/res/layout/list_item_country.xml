@@ -43,7 +43,7 @@
                             android:layout_width="@dimen/dimen_40dp"
                             android:layout_height="@dimen/dimen_40dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/notif_icon" />
+                             />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -62,7 +62,7 @@
                             android:fontFamily="@font/googlesans_bold"
                             android:maxLines="2"
                             android:padding="@dimen/dimen_5dp"
-                            android:text="@{valvesListResponseData.name}"
+                            android:text=""
                             android:textColor="@color/white"
                             android:textSize="@dimen/dimen_12sp"
                             android:visibility="visible" />
@@ -75,7 +75,7 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/googlesans_bold"
                             android:maxLines="2"
-                            android:text="@{valvesListResponseData._id"
+                            android:text=""
                             android:textColor="@color/black"
                             android:textSize="@dimen/dimen_20sp"
                             android:visibility="visible" />
@@ -88,7 +88,7 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="1"
-                            android:text="@{valvesListResponseData.number_valve}"
+                            android:text=""
                             android:textColor="@color/text_color"
                             android:textSize="@dimen/dimen_13sp"
                             android:visibility="visible" />
@@ -120,7 +120,7 @@
                         android:paddingTop="@dimen/dimen_5dp"
                         android:paddingEnd="@dimen/dimen_10dp"
                         android:paddingBottom="@dimen/dimen_5dp"
-                        android:text="@{valvesListResponseData._id}"
+                        android:text=""
                         android:textColor="@color/text_color"
                         android:textSize="@dimen/dimen_11sp"
                         android:visibility="visible" />
