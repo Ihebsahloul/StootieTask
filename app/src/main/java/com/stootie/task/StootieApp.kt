@@ -2,6 +2,7 @@ package com.stootie.task
 
 import android.app.Application
 import com.stootie.task.dagger.component.AppComponent
+import com.stootie.task.dagger.component.DaggerAppComponent
 import com.stootie.task.dagger.module.AppModule
 
 class StootieApp : Application() {
@@ -19,4 +20,5 @@ class StootieApp : Application() {
   private fun initInjector() {
     applicationComponent.inject(this)
   }
+
 }

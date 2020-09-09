@@ -4,6 +4,7 @@ import CountryEnity
 
 import com.stootie.data.global.Constants
 import com.stootie.data.model.Countries
+import dagger.Provides
 import io.reactivex.Single
 import retrofit2.http.*
 

@@ -2,6 +2,7 @@ package com.stootie.task.dagger.module
 
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import com.stootie.data.ApiInterface
 import com.stootie.data.Endpoint
 import com.stootie.data.global.Constants
 import com.stootie.task.BuildConfig
@@ -14,8 +15,8 @@ import javax.inject.Singleton
 
 
 @Module
-class IOModule {
-  private val endpoint: Endpoint
+class NetworkModule {
+  private val endpoint: ApiInterface
 
   init {
     val okHttpBuilder = OkHttpClient.Builder()
@@ -38,10 +39,10 @@ class IOModule {
       .client(okHttpClient)
       .build()
 
-    endpoint = retrofit.create(Endpoint::class.java)
+    endpoint = retrofit.create(ApiInterface::class.java)
   }
 
   @Provides
   @Singleton
-  internal fun provideEndpoint(): Endpoint = endpoint
+  internal fun provideEndpoint(): ApiInterface = endpoint
 }

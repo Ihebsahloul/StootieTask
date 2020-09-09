@@ -32,8 +32,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //dagger support
     implementation "com.google.dagger:dagger:${rootProject.ext.dagger2_vesion}"
-    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjava2_version}"
     implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxandroid_version}"
 
 }
