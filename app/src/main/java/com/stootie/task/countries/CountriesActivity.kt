@@ -3,7 +3,6 @@ package com.stootie.task.countries
 import com.stootie.domain.countries.model.Country
 import com.stootie.task.R
 import com.stootie.task.StootieApp
-import com.stootie.task.countries.di.component.DaggerCountriesComponent
 import com.stootie.task.mvp.CleanActivity
 import kotlinx.android.synthetic.main.activity_countries.*
 

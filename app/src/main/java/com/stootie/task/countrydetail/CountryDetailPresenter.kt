@@ -1,21 +1,22 @@
 package com.stootie.task.countrydetail
 import com.stootie.domain.countries.GetCountriesListUseCase
 import com.stootie.domain.countries.model.Country
+import com.stootie.domain.countrydetail.GetCountryDetailUseCase
 import com.stootie.task.mvp.CleanPresenter
 import javax.inject.Inject
 
-class CountryDetailPresenter @Inject constructor(private val getCountriesListUseCase: GetCountriesListUseCase) : CleanPresenter<CountryDetailView>() {
+class CountryDetailPresenter @Inject constructor(private val getCountryDetailUseCase: GetCountryDetailUseCase) : CleanPresenter<CountryDetailView>() {
 
   override fun initialise() {
     getView()?.initialiseView()
-    getCountriesListUseCase.execute(CountryDetailObserver(this))
+    getCountryDetailUseCase.execute(CountryDetailObserver(this))
   }
 
   override fun disposeSubscriptions() {
-    getCountriesListUseCase.dispose()
+    getCountryDetailUseCase.dispose()
   }
 
-  fun showCountriesList(countriesList: List<Country>) {
-    getView()?.showCountriesList(countriesList)
+  fun showCountryDetail(country: Country) {
+    getView()?.showCountryDetail(country)
   }
 }

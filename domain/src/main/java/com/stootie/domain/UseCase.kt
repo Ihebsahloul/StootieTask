@@ -1,4 +1,4 @@
-package com.stootie.domain.countries
+package com.stootie.domain
 
 import io.reactivex.Scheduler
 import io.reactivex.Single
