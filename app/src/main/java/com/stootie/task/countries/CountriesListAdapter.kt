@@ -17,17 +17,14 @@ import org.w3c.dom.Text
 class CountriesListAdapter(private val context: Context, private val countries: List<Country>) :
   RecyclerView.Adapter<ViewHolder>() {
 
-  // Gets the number of animals in the list
   override fun getItemCount(): Int {
     return countries.size
   }
 
-  // Inflates the item views
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
     return ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_country, parent, false))
   }
 
-  // Binds each animal in the ArrayList to a view
   override fun onBindViewHolder(holder: ViewHolder, position: Int) {
     holder?.countryNameTv?.text = countries.get(position).name
     holder.countryNameTv.setOnClickListener {
@@ -39,15 +36,16 @@ class CountriesListAdapter(private val context: Context, private val countries: 
     countries[position].linkUri()?.let {
       val value: String? = countries.get(position).name
       val intent = Intent(context, CountryDetailActivity::class.java)
-      intent.putExtra("email", value)
+      intent.putExtra("country", value)
       context.startActivity( intent)
     }
   }
 }
 
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-  // Holds the TextView that will add each animal to
+  // Holds the TextView that will add each country
   val countryNameTv = view.country_name_tv
+
   val countryNumericTv = view.country_numeric_tv
   val countryFlagIv = view.country_flag_iv
 }

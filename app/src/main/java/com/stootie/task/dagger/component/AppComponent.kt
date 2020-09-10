@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.stootie.data.ApiInterface
 import com.stootie.domain.countries.GetCountriesListUseCase
+import com.stootie.domain.countrydetail.GetCountryDetailUseCase
 import com.stootie.task.StootieApp
 import com.stootie.task.dagger.module.AppModule
 import com.stootie.task.dagger.module.NetworkModule
@@ -22,4 +23,5 @@ interface AppComponent {
   fun getApplicationContext(): Context
   fun getEndpoint(): ApiInterface
   fun getCountriesListUseCase(): GetCountriesListUseCase
+  fun getCountryDetailUseCase(): GetCountryDetailUseCase
 }

@@ -1,4 +1,7 @@
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 /*
 Copyright (c) 2020 Kotlin Data Classes Generated from JSON powered by http://www.json2kotlin.com
@@ -12,6 +15,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
+@Suppress("UNREACHABLE_CODE")
 data class CountryEnity (
 
 	@SerializedName("name") val name : String,
@@ -38,4 +42,67 @@ data class CountryEnity (
 	@SerializedName("flag") val flag : String,
 	@SerializedName("regionalBlocs") val regionalBlocs : List<RegionalBlocsEntity>,
 	@SerializedName("cioc") val cioc : String
-)
+) :Parcelable {
+	constructor(parcel: Parcel) : this(
+		parcel.readString()!!,
+		parcel.createStringArrayList()!!,
+		parcel.readString()!!,
+		parcel.readString()!!,
+		TODO("callingCodes"),
+		parcel.readString()!!,
+		parcel.createStringArrayList()!!,
+		parcel.readString()!!,
+		parcel.readString()!!,
+		parcel.readInt(),
+		TODO("latlng"),
+		parcel.readString()!!,
+		parcel.readInt(),
+		parcel.readString()!!,
+		parcel.createStringArrayList()!!,
+		parcel.createStringArrayList()!!,
+		parcel.readString()!!,
+		parcel.readInt(),
+		TODO("currencies"),
+		TODO("languages"),
+		TODO("translations"),
+		parcel.readString()!!,
+		TODO("regionalBlocs"),
+		parcel.readString()!!
+	) {
+	}
+
+	override fun writeToParcel(parcel: Parcel, flags: Int) {
+		parcel.writeString(name)
+		parcel.writeStringList(topLevelDomain)
+		parcel.writeString(alpha2Code)
+		parcel.writeString(alpha3Code)
+		parcel.writeString(capital)
+		parcel.writeStringList(altSpellings)
+		parcel.writeString(region)
+		parcel.writeString(subregion)
+		parcel.writeInt(population)
+		parcel.writeString(demonym)
+		parcel.writeInt(area)
+		parcel.writeString(gini)
+		parcel.writeStringList(timezones)
+		parcel.writeStringList(borders)
+		parcel.writeString(nativeName)
+		parcel.writeInt(numericCode)
+		parcel.writeString(flag)
+		parcel.writeString(cioc)
+	}
+
+	override fun describeContents(): Int {
+		return 0
+	}
+
+	companion object CREATOR : Parcelable.Creator<CountryEnity> {
+		override fun createFromParcel(parcel: Parcel): CountryEnity {
+			return CountryEnity(parcel)
+		}
+
+		override fun newArray(size: Int): Array<CountryEnity?> {
+			return arrayOfNulls(size)
+		}
+	}
+}

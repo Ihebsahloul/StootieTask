@@ -1,7 +1,8 @@
 package com.stootie.domain.countries
 
-import CountryEnity
+import android.os.Parcelable
 import com.stootie.data.repository.CountriesRepository
+import com.stootie.domain.UseCase
 import com.stootie.domain.countries.model.Country
 import io.reactivex.Scheduler
 import io.reactivex.Single
@@ -15,4 +16,8 @@ class GetCountriesListUseCase @Inject constructor(private val countriesRepositor
         .map {
             it.map { Country(it.name, it.numericCode, it.flag) }
         }
+
+    override fun buildUseCaseEntity(params: Unit?): Parcelable {
+        TODO("Not yet implemented")
+    }
 }
