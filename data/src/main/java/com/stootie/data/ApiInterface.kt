@@ -1,10 +1,9 @@
 package com.stootie.data
 
-import CountryEnity
+import CountryEntity
 
 import com.stootie.data.global.Constants
 import com.stootie.data.model.Countries
-import dagger.Provides
 import io.reactivex.Single
 import retrofit2.http.*
 
@@ -13,9 +12,9 @@ interface ApiInterface {
 
 
     @GET(Constants.EndPoints.COUNTRY_DETAIL)
-    fun getCountryDetail(name : String): Single<CountryEnity>
+    fun getCountryDetail(name : String): Single<CountryEntity>
 
     @GET(Constants.EndPoints.ALL_COUNTRIES)
-    fun getCountries(): Single<Countries>
+    fun getCountries(): Single<List<CountryEntity>>
 
 }

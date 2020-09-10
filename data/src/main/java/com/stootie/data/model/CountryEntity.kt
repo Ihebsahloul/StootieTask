@@ -1,7 +1,6 @@
 import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 /*
 Copyright (c) 2020 Kotlin Data Classes Generated from JSON powered by http://www.json2kotlin.com
@@ -16,7 +15,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 
 @Suppress("UNREACHABLE_CODE")
-data class CountryEnity (
+data class CountryEntity (
 
 	@SerializedName("name") val name : String,
 	@SerializedName("topLevelDomain") val topLevelDomain : List<String>,
@@ -28,7 +27,7 @@ data class CountryEnity (
 	@SerializedName("region") val region : String,
 	@SerializedName("subregion") val subregion : String,
 	@SerializedName("population") val population : Int,
-	@SerializedName("latlng") val latlng : List<Int>,
+	@SerializedName("latlng") val latlng : List<Double>,
 	@SerializedName("demonym") val demonym : String,
 	@SerializedName("area") val area : Int,
 	@SerializedName("gini") val gini : String,
@@ -96,12 +95,12 @@ data class CountryEnity (
 		return 0
 	}
 
-	companion object CREATOR : Parcelable.Creator<CountryEnity> {
-		override fun createFromParcel(parcel: Parcel): CountryEnity {
-			return CountryEnity(parcel)
+	companion object CREATOR : Parcelable.Creator<CountryEntity> {
+		override fun createFromParcel(parcel: Parcel): CountryEntity {
+			return CountryEntity(parcel)
 		}
 
-		override fun newArray(size: Int): Array<CountryEnity?> {
+		override fun newArray(size: Int): Array<CountryEntity?> {
 			return arrayOfNulls(size)
 		}
 	}

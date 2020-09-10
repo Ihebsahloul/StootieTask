@@ -1,7 +1,6 @@
 package com.stootie.domain.countrydetail
 
-import CountryEnity
-import com.stootie.data.repository.CountriesRepository
+import CountryEntity
 import com.stootie.data.repository.CountryDetailRepository
 import com.stootie.domain.UseCase
 import com.stootie.domain.countries.model.Country
@@ -13,7 +12,7 @@ class GetCountryDetailUseCase @Inject constructor(private val countriesRepositor
                                                   subscribeScheduler: Scheduler,
                                                   postExecutionScheduler: Scheduler) : UseCase<Country, Unit>(subscribeScheduler, postExecutionScheduler) {
 
-    override fun buildUseCaseEntity(params: Unit?): CountryEnity = countriesRepository.countryDetail()
+    override fun buildUseCaseEntity(params: Unit?): CountryEntity = countriesRepository.countryDetail()
 
     override fun buildUseCaseSingle(params: Unit?): Single<Country> {
         TODO("Not yet implemented")
