@@ -21,16 +21,15 @@ data class CountryEntity (
 	@SerializedName("topLevelDomain") val topLevelDomain : List<String>,
 	@SerializedName("alpha2Code") val alpha2Code : String,
 	@SerializedName("alpha3Code") val alpha3Code : String,
-	@SerializedName("callingCodes") val callingCodes : List<Int>,
+	@SerializedName("callingCodes") val callingCodes : List<String>,
 	@SerializedName("capital") val capital : String,
 	@SerializedName("altSpellings") val altSpellings : List<String>,
 	@SerializedName("region") val region : String,
 	@SerializedName("subregion") val subregion : String,
 	@SerializedName("population") val population : Int,
-	@SerializedName("latlng") val latlng : List<Double>,
+	@SerializedName("latlng") val latlng : List<Float>,
 	@SerializedName("demonym") val demonym : String,
-	@SerializedName("area") val area : Int,
-	@SerializedName("gini") val gini : String,
+
 	@SerializedName("timezones") val timezones : List<String>,
 	@SerializedName("borders") val borders : List<String>,
 	@SerializedName("nativeName") val nativeName : String,
@@ -54,8 +53,6 @@ data class CountryEntity (
 		parcel.readString()!!,
 		parcel.readInt(),
 		TODO("latlng"),
-		parcel.readString()!!,
-		parcel.readInt(),
 		parcel.readString()!!,
 		parcel.createStringArrayList()!!,
 		parcel.createStringArrayList()!!,
@@ -81,8 +78,6 @@ data class CountryEntity (
 		parcel.writeString(subregion)
 		parcel.writeInt(population)
 		parcel.writeString(demonym)
-		parcel.writeInt(area)
-		parcel.writeString(gini)
 		parcel.writeStringList(timezones)
 		parcel.writeStringList(borders)
 		parcel.writeString(nativeName)

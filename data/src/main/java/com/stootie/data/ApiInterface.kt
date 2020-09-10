@@ -14,7 +14,7 @@ interface ApiInterface {
     @GET(Constants.EndPoints.COUNTRY_DETAIL)
     fun getCountryDetail(name : String): Single<CountryEntity>
 
-    @GET(Constants.EndPoints.ALL_COUNTRIES)
+    @GET(Constants.EndPoints.COLOMBIA_TEST)
     fun getCountries(): Single<List<CountryEntity>>
 
 }

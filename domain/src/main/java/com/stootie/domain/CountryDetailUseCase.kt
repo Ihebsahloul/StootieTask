@@ -8,15 +8,15 @@ import io.reactivex.SingleObserver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-abstract class UseCase<T, in Params>(private val subscribeScheduler: Scheduler,
-                                     private val postExecutionScheduler: Scheduler
+abstract class CountryDetailUseCase<T, in Params>(private val subscribeScheduler: Scheduler,
+                                                  private val postExecutionScheduler: Scheduler
 ) {
 
     private val disposables: CompositeDisposable = CompositeDisposable()
 
     abstract fun buildUseCaseSingle(params: Params?): Single<T>
 
-    abstract fun buildUseCaseEntity(params: Params?): Single<Parcelable>
+    abstract fun buildUseCaseEntity(params: Params?): Parcelable
 
     fun execute(observer: SingleObserver<T>, params: Params? = null) {
         val observable: Single<T> = this.buildUseCaseSingle(params)
@@ -26,15 +26,6 @@ abstract class UseCase<T, in Params>(private val subscribeScheduler: Scheduler,
             disposables.add(it)
         }
     }
-
-    /*fun executeParcelable(observer: SingleObserver<T>, params: Params? = null) {
-        val observable: Single<Parcelable> = this.buildUseCaseEntity(params)
-            .subscribeOn(subscribeScheduler)
-            .observeOn(postExecutionScheduler)
-        (observable.subscribeWith(observer) as? Disposable)?.let {
-            disposables.add(it)
-        }
-    }*/
 
     fun dispose() {
         disposables.clear()

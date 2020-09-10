@@ -5,6 +5,7 @@ class Constants {
 
     companion object {
         const val BASE_URL: String = "https://restcountries.eu/rest/v2/"
+        const val BASE_URL_TEST: String = "https://restcountries.eu/rest/v2/name/"
 
     }
 
@@ -26,6 +27,7 @@ class Constants {
 
     object EndPoints {
         const val ALL_COUNTRIES  = "all"
+        const val COLOMBIA_TEST = "united"
         const val COUNTRY_DETAIL  = "name/"
     }
 
