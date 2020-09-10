@@ -16,7 +16,7 @@ abstract class UseCase<T, in Params>(private val subscribeScheduler: Scheduler,
 
     abstract fun buildUseCaseSingle(params: Params?): Single<T>
 
-    abstract fun buildUseCaseEntity(params: Params?): Single<Parcelable>
+    abstract fun buildUseCaseEntity(params: Params?): Parcelable
 
     fun execute(observer: SingleObserver<T>, params: Params? = null) {
         val observable: Single<T> = this.buildUseCaseSingle(params)
@@ -27,14 +27,6 @@ abstract class UseCase<T, in Params>(private val subscribeScheduler: Scheduler,
         }
     }
 
-    /*fun executeParcelable(observer: SingleObserver<T>, params: Params? = null) {
-        val observable: Single<Parcelable> = this.buildUseCaseEntity(params)
-            .subscribeOn(subscribeScheduler)
-            .observeOn(postExecutionScheduler)
-        (observable.subscribeWith(observer) as? Disposable)?.let {
-            disposables.add(it)
-        }
-    }*/
 
     fun dispose() {
         disposables.clear()

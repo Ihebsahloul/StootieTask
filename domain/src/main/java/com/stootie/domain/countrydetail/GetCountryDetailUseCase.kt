@@ -10,13 +10,10 @@ import javax.inject.Inject
 
 class GetCountryDetailUseCase @Inject constructor(private val countriesRepository: CountryDetailRepository,
                                                   subscribeScheduler: Scheduler,
-                                                  postExecutionScheduler: Scheduler) : UseCase<Country, Unit>(subscribeScheduler, postExecutionScheduler) {
+                                                  postExecutionScheduler: Scheduler)  {
 
-    override fun buildUseCaseEntity(params: Unit?): CountryEntity = countriesRepository.countryDetail()
-    override fun buildUseCaseSingle(params: Unit?): Single<Country> {
-        TODO("Not yet implemented")
-    }
-}
+     fun buildUseCaseEntity(params: Unit?): CountryEntity = countriesRepository.countryDetail()
+
 
 
 }

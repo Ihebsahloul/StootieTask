@@ -5,5 +5,6 @@ import com.stootie.domain.countries.model.Country
 
 interface CountryDetailView {
   fun initialiseView()
-  fun showCountryDetail(country: Country)
+  fun getCountryDetail()
+  fun showCountryDetail(country : Country)
 }

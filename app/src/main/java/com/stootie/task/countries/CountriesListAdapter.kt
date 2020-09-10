@@ -34,7 +34,7 @@ class CountriesListAdapter(private val context: Context, private val countries: 
 
   private fun navigateToCountryDetail(position: Int) {
     countries[position].linkUri()?.let {
-      val value: String? = countries.get(position).name
+      val value: Country? = countries.get(position)
       val intent = Intent(context, CountryDetailActivity::class.java)
       intent.putExtra("country", value)
       context.startActivity( intent)
@@ -45,7 +45,6 @@ class CountriesListAdapter(private val context: Context, private val countries: 
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
   // Holds the TextView that will add each country
   val countryNameTv = view.country_name_tv
-
   val countryNumericTv = view.country_numeric_tv
   val countryFlagIv = view.country_flag_iv
 }
