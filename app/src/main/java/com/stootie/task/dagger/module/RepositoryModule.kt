@@ -12,11 +12,11 @@ import javax.inject.Singleton
 
 @Module
 class RepositoryModule {
-  /*@Provides
+ @Provides
   @Singleton
   internal fun provideCountriesRepository( endpoint: ApiInterface): CountriesRepository = CountriesRepository(endpoint)
 
   @Provides
   @Singleton
-  internal fun provideCountryDetailRepository(intent: Intent, name:String): CountryDetailRepository = CountryDetailRepository(intent,name)*/
+  internal fun provideCountryDetailRepository(): CountryDetailRepository = CountryDetailRepository()
 }

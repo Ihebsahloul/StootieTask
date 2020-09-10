@@ -17,7 +17,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AppModule::class, NetworkModule::class, RepositoryModule::class, UseCaseModule::class])
+@Component(modules = [AppModule::class, NetworkModule::class,RepositoryModule::class, UseCaseModule::class])
 interface AppComponent {
   fun inject(app: StootieApp)
   fun getApplicationContext(): Context

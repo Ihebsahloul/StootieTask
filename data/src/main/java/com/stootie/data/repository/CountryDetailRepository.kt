@@ -7,7 +7,12 @@ import com.stootie.data.Endpoint
 import io.reactivex.Single
 import javax.inject.Inject
 
-class CountryDetailRepository @Inject constructor(private val intent: Intent, private val name: String) {
+class CountryDetailRepository @Inject constructor( ) {
+   val intent : Intent
+      get() {
+         TODO()
+      }
+
    fun countryDetail(): CountryEnity = intent.getParcelableExtra<CountryEnity?>("country")!!
 
 }

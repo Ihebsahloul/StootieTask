@@ -10,5 +10,5 @@ import dagger.Component
 @PerActivity
 @Component(dependencies = [AppComponent::class], modules = [CountryDetailModule::class])
 interface CountryDetailComponent {
-  fun inject(countrydetailActivity: CountryDetailActivity)
+  fun inject(countryDetailActivity: CountryDetailActivity)
 }

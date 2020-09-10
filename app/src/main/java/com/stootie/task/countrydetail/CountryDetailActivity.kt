@@ -1,5 +1,7 @@
 package com.stootie.task.countrydetail
 
+import android.app.Application
+import android.content.Context
 import com.stootie.domain.countries.model.Country
 import com.stootie.task.R
 import com.stootie.task.StootieApp
@@ -10,10 +12,11 @@ import kotlinx.android.synthetic.main.activity_countries.*
 
 class CountryDetailActivity : CleanActivity <CountryDetailPresenter>(), CountryDetailView {
     override fun getLayout(): Int = R.layout.activity_countries
+    val stootieApp = StootieApp()
 
     override fun initInjector() {
       DaggerCountryDetailComponent.builder()
-            .appComponent((application as StootieApp).applicationComponent)
+          .appComponent(stootieApp.applicationComponent)
             .build()
             .inject(this)
     }
@@ -23,7 +26,7 @@ class CountryDetailActivity : CleanActivity <CountryDetailPresenter>(), CountryD
         }
 
     override fun showCountryDetail(country: Country) {
-        TODO("Not yet implemented")
+
     }
 }
 
