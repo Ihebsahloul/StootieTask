@@ -6,10 +6,12 @@ import android.os.Parcelable
 
 data class Country(var name: String? = null,
                    var numericCode: Int? ,
+                   var region: String? ,
                    var flag: String? = null):Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readValue(Int::class.java.classLoader) as? Int,
+        parcel.readString(),
         parcel.readString()
     ) {
     }
@@ -17,6 +19,7 @@ data class Country(var name: String? = null,
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
         parcel.writeValue(numericCode)
+        parcel.writeString(region)
         parcel.writeString(flag)
     }
 
@@ -34,5 +37,3 @@ data class Country(var name: String? = null,
         }
     }
 }
-
-fun Country.linkUri(): Uri? = Uri.parse(flag)

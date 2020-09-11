@@ -14,7 +14,7 @@ class GetCountriesListUseCase @Inject constructor(private val countriesRepositor
 
     override fun buildUseCaseSingle(params: Unit?): Single<List<Country>> = countriesRepository.countries()
         .map {
-            it.map { Country(it.name, it.numericCode, it.flag) }
+            it.map { Country(it.name, it.numericCode, it.region,it.flag) }
         }
 
     override fun buildUseCaseEntity(params: Unit?): Parcelable {
