@@ -9,6 +9,7 @@ class CountriesListObserver(private val presenter: CountriesPresenter): Disposab
   }
 
   override fun onError(e: Throwable) {
+    presenter.showError(e)
     e.printStackTrace()
   }
 }

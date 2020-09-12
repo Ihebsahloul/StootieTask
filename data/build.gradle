@@ -31,9 +31,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -42,6 +39,12 @@ dependencies {
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
     implementation libs.rxJava
+    testImplementation "junit:junit:${rootProject.ext.junit_version}"
+    testImplementation "org.mockito:mockito-core:${rootProject.ext.mockito_version}"
+    testImplementation "org.powermock:powermock-module-junit4:${rootProject.ext.powermock_version}"
+    testImplementation "org.powermock:powermock-api-mockito2:${rootProject.ext.powermock_version}"
+    androidTestImplementation "androidx.test:runner:${rootProject.ext.test_runner_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.espresso_version}"
     //dagger support
     implementation "com.google.dagger:dagger:${rootProject.ext.dagger2_vesion}"
 

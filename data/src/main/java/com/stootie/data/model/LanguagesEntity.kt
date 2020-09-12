@@ -1,3 +1,5 @@
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 /*
@@ -18,4 +20,33 @@ data class LanguagesEntity (
 	@SerializedName("iso639_2") val iso639_2 : String,
 	@SerializedName("name") val name : String,
 	@SerializedName("nativeName") val nativeName : String
-)
+) :Parcelable {
+	constructor(parcel: Parcel) : this(
+		parcel.readString()!!,
+		parcel.readString()!!,
+		parcel.readString()!!,
+		parcel.readString()!!
+	) {
+	}
+
+	override fun writeToParcel(parcel: Parcel, flags: Int) {
+		parcel.writeString(iso639_1)
+		parcel.writeString(iso639_2)
+		parcel.writeString(name)
+		parcel.writeString(nativeName)
+	}
+
+	override fun describeContents(): Int {
+		return 0
+	}
+
+	companion object CREATOR : Parcelable.Creator<LanguagesEntity> {
+		override fun createFromParcel(parcel: Parcel): LanguagesEntity {
+			return LanguagesEntity(parcel)
+		}
+
+		override fun newArray(size: Int): Array<LanguagesEntity?> {
+			return arrayOfNulls(size)
+		}
+	}
+}

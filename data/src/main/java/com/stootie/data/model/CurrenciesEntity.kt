@@ -1,3 +1,5 @@
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 /*
@@ -17,4 +19,31 @@ data class CurrenciesEntity (
 	@SerializedName("code") val code : String,
 	@SerializedName("name") val name : String,
 	@SerializedName("symbol") val symbol : String
-)
+) : Parcelable {
+	constructor(parcel: Parcel) : this(
+		parcel.readString()!!,
+		parcel.readString()!!,
+		parcel.readString()!!
+	) {
+	}
+
+	override fun writeToParcel(parcel: Parcel, flags: Int) {
+		parcel.writeString(code)
+		parcel.writeString(name)
+		parcel.writeString(symbol)
+	}
+
+	override fun describeContents(): Int {
+		return 0
+	}
+
+	companion object CREATOR : Parcelable.Creator<CurrenciesEntity> {
+		override fun createFromParcel(parcel: Parcel): CurrenciesEntity {
+			return CurrenciesEntity(parcel)
+		}
+
+		override fun newArray(size: Int): Array<CurrenciesEntity?> {
+			return arrayOfNulls(size)
+		}
+	}
+}

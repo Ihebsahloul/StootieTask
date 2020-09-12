@@ -10,6 +10,6 @@ class CountryDetailRepository @Inject constructor( ) {
          TODO()
       }
 
-   fun countryDetail(): CountryEntity = intent.getParcelableExtra<CountryEntity?>("country")!!
+   fun countryDetail(): CountryEntity = intent.getSerializableExtra("country")as CountryEntity
 
 }

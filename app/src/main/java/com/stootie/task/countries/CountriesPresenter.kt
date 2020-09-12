@@ -18,4 +18,8 @@ class CountriesPresenter @Inject constructor(private val getCountriesListUseCase
   fun showCountriesList(countriesList: List<Country>) {
     getView()?.showCountriesList(countriesList)
   }
+
+  fun showError(e: Throwable) {
+    getView()?.showError(e)
+  }
 }
