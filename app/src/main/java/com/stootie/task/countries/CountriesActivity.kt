@@ -2,6 +2,7 @@ package com.stootie.task.countries
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ProgressBar
@@ -11,6 +12,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.work.Configuration
+import com.google.android.material.snackbar.Snackbar
 import com.mtp.laboproject.view.adapter.CountriesListAdapter
 import com.stootie.domain.countries.model.Country
 import com.stootie.task.R
@@ -39,15 +42,19 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_countries)
+        setViews()
+
+
+    }
+
+    private fun setViews() {
         tvNoRecords = findViewById(R.id.no_records_tv)
         countriesRecyclerView = findViewById(R.id.countries_list_recycler_view)
         val toolbar = findViewById<Toolbar>(R.id.main_toolbar)
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-
-
-
     }
+
     override fun initInjector() {
        DaggerCountriesComponent.builder()
            .appComponent(stootieApp.applicationComponent)
@@ -81,7 +88,6 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
         searchView = menu.findItem(R.id.search_view).actionView as SearchView
         searchView.queryHint = getString(R.string.search_hint)
         menu.findItem(R.id.search_view).isVisible = true
-
         return true
     }
 
@@ -99,7 +105,20 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
         countriesRecyclerView.layoutManager = LinearLayoutManager(this)
         countriesRecyclerView.adapter = CountriesListAdapter(this, countries)
         searchCountry(countriesAdapter)
-        setSwipeRefresh(countries)
+        setSwipeRefresh(CountriesListAdapter(this, countries).filtredListofCountries)
+    }
+
+    override fun showError(e: Throwable) {
+        val snackBar = Snackbar.make(
+            findViewById(android.R.id.content), getString(R.string.error_text),
+            Snackbar.LENGTH_LONG
+        )
+        snackBar.setActionTextColor(resources.getColor(R.color.black))
+        val snackBarView = snackBar.view
+        snackBarView.setBackgroundColor(resources.getColor(R.color.black))
+        val textView = snackBarView.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
+        textView.setTextColor(Color.BLUE)
+        snackBar.show()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -119,10 +138,41 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
         )
         swipeCountries.setColorSchemeColors(Color.WHITE)
         swipeCountries.setOnRefreshListener {
-            countriesRecyclerView.adapter = CountriesListAdapter(this, countries)
+            countriesRecyclerView.adapter = CountriesListAdapter(applicationContext, countries)
             swipeCountries.isRefreshing = false
         }
     }
-
-
 }
+   /* override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        savedInstanceState.putParcelableArrayList("movie_data", cou);
+        //call super to commit your changes
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        columns = resources.getInteger(R.integer.gallery_columns)
+        if (mBundleRecyclerViewState != null) {
+            Handler().postDelayed(Runnable {
+                mListState = mBundleRecyclerViewState.getParcelable(KEY_RECYCLER_STATE)
+                mRecyclerView.getLayoutManager().onRestoreInstanceState(mListState)
+            }, 50)
+        }
+
+        // Checks the orientation of the screen
+        if (newConfig.orientation === Configuration.ORIENTATION_LANDSCAPE) {
+            gridLayoutManager.setSpanCount(columns)
+        } else if (newConfig.orientation === Configuration.ORIENTATION_PORTRAIT) {
+            gridLayoutManager.setSpanCount(columns)
+        }
+        mRecyclerView.setLayoutManager(gridLayoutManager)
+    }
+
+    //this saves the data to a temporary storage
+
+
+
+}*/
