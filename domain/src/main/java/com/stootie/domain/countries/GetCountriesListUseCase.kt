@@ -6,6 +6,7 @@ import com.stootie.domain.UseCase
 import com.stootie.domain.countries.model.Country
 import io.reactivex.Scheduler
 import io.reactivex.Single
+import java.io.Serializable
 import javax.inject.Inject
 
 class GetCountriesListUseCase @Inject constructor(private val countriesRepository: CountriesRepository,
@@ -14,7 +15,7 @@ class GetCountriesListUseCase @Inject constructor(private val countriesRepositor
 
     override fun buildUseCaseSingle(params: Unit?): Single<List<Country>> = countriesRepository.countries()
         .map {
-            it.map { Country(it.name, it.numericCode, it.region,it.flag) }
+            it.map { Country(it.name, it.capital, it.population,it.currencies.get(0).name, it.languages.get(0).name,it.callingCodes,it.area,it.numericCode,it.region,it.flag) }
         }
 
     override fun buildUseCaseEntity(params: Unit?): Parcelable {

@@ -7,6 +7,7 @@ import io.reactivex.Single
 import io.reactivex.SingleObserver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import java.io.Serializable
 
 abstract class UseCase<T, in Params>(private val subscribeScheduler: Scheduler,
                                      private val postExecutionScheduler: Scheduler
