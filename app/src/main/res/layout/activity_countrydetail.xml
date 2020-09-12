@@ -2,23 +2,27 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/viewCard_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:background="@color/grey_bg">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            app:title="@string/stootie_text"
+            android:layout_width="match_parent"
+            app:logo="@drawable/stootie_logo"
+            android:background="@color/white"
+            android:layout_height="wrap_content"/>
 
         <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:layout_marginBottom="@dimen/dimen_2dp"
-            android:layout_marginStart="@dimen/dimen_3dp"
-            android:layout_marginEnd="@dimen/dimen_3dp"
             card_view:cardCornerRadius="5dp"
             card_view:cardElevation="@dimen/dimen_2dp">
 
@@ -29,14 +33,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/bg_screen2"
                 android:orientation="vertical">
-                <com.stootie.task.view.CirleImageView
+                <com.stootie.task.view.CircleImageView
                     android:id="@+id/country_flag_iv"
                     android:layout_width="@dimen/dimen_150dp"
                     android:layout_marginTop="@dimen/dimen_30dp"
                     android:layout_height="@dimen/dimen_150dp"
-                    android:scaleType="center"
+                    android:scaleType="centerCrop"
                     android:layout_gravity="center"
                     android:src="@drawable/uae_flag"
                     />
@@ -80,8 +83,7 @@
                         android:layout_marginTop="@dimen/dimen_15dp"
                         android:layout_weight="0.1">
 
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
+                        <com.stootie.task.view.CircleImageView
                             android:layout_width="@dimen/dimen_40dp"
                             android:layout_height="@dimen/dimen_40dp"
                             android:scaleType="center"
@@ -90,14 +92,12 @@
                     </RelativeLayout>
 
                     <LinearLayout
-                        android:id="@+id/main_layout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2.9"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/country_region_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_15dp"
@@ -105,19 +105,19 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
+                            android:text="@string/capital_title"
+                            android:textColor="@color/bg_screen2"
                             android:textSize="@dimen/dimen_13sp"
                             android:visibility="visible" />
 
                         <TextView
-                            android:id="@+id/country_name_tv"
+                            android:id="@+id/country_capital_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_5dp"
                             android:layout_marginEnd="@dimen/dimen_20dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
+                            android:fontFamily="@font/googlesans_medium"
                             android:maxLines="2"
                             android:text="@string/text_name_test"
                             android:textColor="@color/black"
@@ -139,7 +139,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:paddingStart="@dimen/dimen_20dp"
+                android:paddingEnd="@dimen/dimen_20dp"
                 android:orientation="vertical">
 
 
@@ -157,101 +158,21 @@
                         android:layout_marginTop="@dimen/dimen_15dp"
                         android:layout_weight="0.1">
 
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
-                            android:layout_width="@dimen/dimen_50dp"
-                            android:layout_height="@dimen/dimen_50dp"
-                            android:scaleType="center"
-                            android:src="@drawable/population_ic"
-                            />
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:id="@+id/main_layout"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2.9"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/country_region_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_15dp"
-                            android:layout_marginStart="@dimen/dimen_15dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_medium"
-                            android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
-                            android:textSize="@dimen/dimen_13sp"
-                            android:visibility="visible" />
-
-                        <TextView
-                            android:id="@+id/country_name_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_5dp"
-                            android:layout_marginEnd="@dimen/dimen_20dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
-                            android:maxLines="2"
-                            android:text="@string/text_name_test"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_20sp"
-                            android:visibility="visible" />
-
-
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_15dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_10dp"
-                        android:layout_marginTop="@dimen/dimen_15dp"
-                        android:layout_weight="0.1">
-
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
-                            android:layout_width="@dimen/dimen_50dp"
-                            android:layout_height="@dimen/dimen_50dp"
+                        <com.stootie.task.view.CircleImageView
+                            android:layout_width="@dimen/dimen_40dp"
+                            android:layout_height="@dimen/dimen_40dp"
                             android:scaleType="center"
                             android:src="@drawable/continent_ic"
                             />
                     </RelativeLayout>
 
                     <LinearLayout
-                        android:id="@+id/main_layout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2.9"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/country_region_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_15dp"
@@ -259,23 +180,23 @@
                             android:ellipsize="end"
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
+                            android:text="@string/continent_title"
+                            android:textColor="@color/bg_screen2"
                             android:textSize="@dimen/dimen_13sp"
                             android:visibility="visible" />
 
                         <TextView
-                            android:id="@+id/country_name_tv"
+                            android:id="@+id/country_continent_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_5dp"
                             android:layout_marginEnd="@dimen/dimen_20dp"
                             android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
+                            android:fontFamily="@font/googlesans_medium"
                             android:maxLines="2"
                             android:text="@string/text_name_test"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_20sp"
+                            android:textSize="@dimen/dimen_15sp"
                             android:visibility="visible" />
 
 
@@ -289,314 +210,383 @@
 
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_15dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_10dp"
-                        android:layout_marginTop="@dimen/dimen_15dp"
-                        android:layout_weight="0.1">
-
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
-                            android:layout_width="@dimen/dimen_50dp"
-                            android:layout_height="@dimen/dimen_50dp"
-                            android:scaleType="center"
-                            android:src="@drawable/area_ic"
-                            />
-                    </RelativeLayout>
 
                     <LinearLayout
-                        android:id="@+id/main_layout"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2.9"
-                        android:orientation="vertical">
+                        android:layout_marginBottom="@dimen/dimen_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <TextView
-                            android:id="@+id/country_region_tv"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
                             android:layout_marginTop="@dimen/dimen_15dp"
-                            android:layout_marginStart="@dimen/dimen_15dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_medium"
-                            android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
-                            android:textSize="@dimen/dimen_13sp"
-                            android:visibility="visible" />
+                            android:layout_weight="0.1">
 
-                        <TextView
-                            android:id="@+id/country_name_tv"
-                            android:layout_width="wrap_content"
+                            <com.stootie.task.view.CircleImageView
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"
+                                android:scaleType="center"
+                                android:src="@drawable/population_ic"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_5dp"
-                            android:layout_marginEnd="@dimen/dimen_20dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
-                            android:maxLines="2"
-                            android:text="@string/text_name_test"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_20sp"
-                            android:visibility="visible" />
+                            android:layout_weight="2.9"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_15dp"
+                                android:layout_marginStart="@dimen/dimen_15dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="1"
+                                android:text="@string/population_title"
+                                android:textColor="@color/bg_screen2"
+                                android:textSize="@dimen/dimen_13sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/country_population_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_marginEnd="@dimen/dimen_20dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="2"
+                                android:text="@string/text_name_test"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dimen_15sp"
+                                android:visibility="visible" />
 
 
+
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
 
 
+
                 </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_15dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_10dp"
-                        android:layout_marginTop="@dimen/dimen_15dp"
-                        android:layout_weight="0.1">
-
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
-                            android:layout_width="@dimen/dimen_50dp"
-                            android:layout_height="@dimen/dimen_50dp"
-                            android:scaleType="center"
-                            android:src="@drawable/language_ic"
-                            />
-                    </RelativeLayout>
 
                     <LinearLayout
-                        android:id="@+id/main_layout"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2.9"
-                        android:orientation="vertical">
+                        android:layout_marginBottom="@dimen/dimen_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <TextView
-                            android:id="@+id/country_region_tv"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
                             android:layout_marginTop="@dimen/dimen_15dp"
-                            android:layout_marginStart="@dimen/dimen_15dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_medium"
-                            android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
-                            android:textSize="@dimen/dimen_13sp"
-                            android:visibility="visible" />
+                            android:layout_weight="0.1">
 
-                        <TextView
-                            android:id="@+id/country_name_tv"
-                            android:layout_width="wrap_content"
+                            <com.stootie.task.view.CircleImageView
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"
+                                android:scaleType="center"
+                                android:src="@drawable/continent_ic"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_5dp"
-                            android:layout_marginEnd="@dimen/dimen_20dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
-                            android:maxLines="2"
-                            android:text="@string/text_name_test"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_20sp"
-                            android:visibility="visible" />
+                            android:layout_weight="2.9"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_15dp"
+                                android:layout_marginStart="@dimen/dimen_15dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="1"
+                                android:text="@string/area_title"
+                                android:textColor="@color/bg_screen2"
+                                android:textSize="@dimen/dimen_13sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/country_area_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_marginEnd="@dimen/dimen_20dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="2"
+                                android:text="@string/text_name_test"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dimen_15sp"
+                                android:visibility="visible" />
 
 
+
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
 
 
+
                 </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_15dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_10dp"
-                        android:layout_marginTop="@dimen/dimen_15dp"
-                        android:layout_weight="0.1">
-
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
-                            android:layout_width="@dimen/dimen_50dp"
-                            android:layout_height="@dimen/dimen_50dp"
-                            android:scaleType="center"
-                            android:src="@drawable/currency_ic"
-                            />
-                    </RelativeLayout>
 
                     <LinearLayout
-                        android:id="@+id/main_layout"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2.9"
-                        android:orientation="vertical">
+                        android:layout_marginBottom="@dimen/dimen_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <TextView
-                            android:id="@+id/country_region_tv"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
                             android:layout_marginTop="@dimen/dimen_15dp"
-                            android:layout_marginStart="@dimen/dimen_15dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_medium"
-                            android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
-                            android:textSize="@dimen/dimen_13sp"
-                            android:visibility="visible" />
+                            android:layout_weight="0.1">
 
-                        <TextView
-                            android:id="@+id/country_name_tv"
-                            android:layout_width="wrap_content"
+                            <com.stootie.task.view.CircleImageView
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"
+                                android:scaleType="center"
+                                android:src="@drawable/currency_ic"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_5dp"
-                            android:layout_marginEnd="@dimen/dimen_20dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
-                            android:maxLines="2"
-                            android:text="@string/text_name_test"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_20sp"
-                            android:visibility="visible" />
+                            android:layout_weight="2.9"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_15dp"
+                                android:layout_marginStart="@dimen/dimen_15dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="1"
+                                android:text="@string/language_title"
+                                android:textColor="@color/bg_screen2"
+                                android:textSize="@dimen/dimen_13sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/country_language_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_marginEnd="@dimen/dimen_20dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="2"
+                                android:text="@string/text_name_test"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dimen_15sp"
+                                android:visibility="visible" />
 
 
+
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
 
 
+
                 </LinearLayout>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_15dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dimen_10dp"
-                        android:layout_marginTop="@dimen/dimen_15dp"
-                        android:layout_weight="0.1">
-
-                        <com.stootie.task.view.CirleImageView
-                            android:id="@+id/country_flag_iv"
-                            android:layout_width="@dimen/dimen_50dp"
-                            android:layout_height="@dimen/dimen_50dp"
-                            android:scaleType="center"
-                            android:src="@drawable/callcode_ic"
-                            />
-                    </RelativeLayout>
 
                     <LinearLayout
-                        android:id="@+id/main_layout"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2.9"
-                        android:orientation="vertical">
+                        android:layout_marginBottom="@dimen/dimen_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <TextView
-                            android:id="@+id/country_region_tv"
+                        <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
                             android:layout_marginTop="@dimen/dimen_15dp"
-                            android:layout_marginStart="@dimen/dimen_15dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_medium"
-                            android:maxLines="1"
-                            android:text="@string/test_region_text"
-                            android:textColor="@color/text_color"
-                            android:textSize="@dimen/dimen_13sp"
-                            android:visibility="visible" />
+                            android:layout_weight="0.1">
 
-                        <TextView
-                            android:id="@+id/country_name_tv"
-                            android:layout_width="wrap_content"
+                            <com.stootie.task.view.CircleImageView
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"
+                                android:scaleType="center"
+                                android:src="@drawable/language_ic"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dimen_5dp"
-                            android:layout_marginEnd="@dimen/dimen_20dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/googlesans_bold"
-                            android:maxLines="2"
-                            android:text="@string/text_name_test"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_20sp"
-                            android:visibility="visible" />
+                            android:layout_weight="2.9"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_15dp"
+                                android:layout_marginStart="@dimen/dimen_15dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="1"
+                                android:text="@string/currency_title"
+                                android:textColor="@color/bg_screen2"
+                                android:textSize="@dimen/dimen_13sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/country_currency_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_marginEnd="@dimen/dimen_20dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="2"
+                                android:text="@string/text_name_test"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dimen_15sp"
+                                android:visibility="visible" />
 
 
+
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
 
 
+
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    android:orientation="vertical">
 
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_15dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_15dp"
+                            android:layout_weight="0.1">
+
+                            <com.stootie.task.view.CircleImageView
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"
+                                android:scaleType="center"
+                                android:src="@drawable/callcode_ic"
+                                />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/main_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.9"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_15dp"
+                                android:layout_marginStart="@dimen/dimen_15dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="1"
+                                android:text="@string/call_code_title"
+                                android:textColor="@color/bg_screen2"
+                                android:textSize="@dimen/dimen_13sp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/country_callcode_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_5dp"
+                                android:layout_marginEnd="@dimen/dimen_20dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/googlesans_medium"
+                                android:maxLines="2"
+                                android:text="@string/text_name_test"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dimen_15sp"
+                                android:visibility="visible" />
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
 
 
             </LinearLayout>

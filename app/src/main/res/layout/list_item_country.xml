@@ -44,7 +44,7 @@
                         android:layout_marginTop="@dimen/dimen_15dp"
                         android:layout_weight="0.1">
 
-                        <com.stootie.task.view.CirleImageView
+                        <com.stootie.task.view.CircleImageView
                             android:id="@+id/country_flag_iv"
                             android:layout_width="@dimen/dimen_50dp"
                             android:layout_height="@dimen/dimen_50dp"
