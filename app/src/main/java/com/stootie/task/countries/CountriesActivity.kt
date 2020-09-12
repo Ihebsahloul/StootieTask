@@ -36,21 +36,13 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
     override fun getLayout(): Int = R.layout.activity_countries
     val stootieApp = StootieApp()
 
-  //  val swipeRefreshLayout  : SwipeRefreshLayout = findViewById(R.id.swipeCountries)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_countries)
         tvNoRecords = findViewById(R.id.no_records_tv)
         countriesRecyclerView = findViewById(R.id.countries_list_recycler_view)
-
-        val toolbar =
-            findViewById<Toolbar>(R.id.main_toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.main_toolbar)
         setSupportActionBar(toolbar)
-
-        // toolbar fancy stuff
-
-        // toolbar fancy stuff
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
 
 
@@ -96,15 +88,7 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
 
     override fun initialiseView() {
         countries_list_recycler_view.apply {
-            setHasFixedSize(true)
-          //  layoutManager = LinearLayoutManager(this@CountriesActivity)
-
-
-
-    }
-    }
-    private fun setRecyclerView() {
-
+            setHasFixedSize(true) }
     }
 
     override fun showCountriesList(countries: List<Country>) {
@@ -119,9 +103,6 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         val id: Int = item.itemId
         return if (id == R.id.search_view) {
             true

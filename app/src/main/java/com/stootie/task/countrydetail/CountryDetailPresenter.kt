@@ -9,11 +9,10 @@ class CountryDetailPresenter @Inject constructor(private val getCountryDetailUse
 
   override fun initialise() {
     getView()?.initialiseView()
-   // getCountryDetailUseCase.execute(CountryDetailObserver(this))
   }
 
   override fun disposeSubscriptions() {
-    //getCountryDetailUseCase.dispose()
+
   }
 
   fun showCountryDetail(country: Country) {

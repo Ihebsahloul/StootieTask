@@ -56,9 +56,8 @@ dependencies {
     implementation 'com.pixplicity.sharp:library:1.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
     implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
-    implementation 'com.myhexaville:simple-recyclerview:1.2.0'
 
-    // Kotlin + coroutines + RX
+    // Kotlin + RX
     implementation "androidx.work:work-runtime-ktx:$work_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"

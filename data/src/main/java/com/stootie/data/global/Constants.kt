@@ -27,7 +27,6 @@ class Constants {
 
     object EndPoints {
         const val ALL_COUNTRIES  = "all"
-        const val COLOMBIA_TEST = "united"
         const val COUNTRY_DETAIL  = "name/"
     }
 

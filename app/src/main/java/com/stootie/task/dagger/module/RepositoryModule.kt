@@ -1,13 +1,10 @@
 package com.stootie.task.dagger.module
 
-import android.content.Intent
 import com.stootie.data.ApiInterface
-import com.stootie.data.Endpoint
 import com.stootie.data.repository.CountriesRepository
 import com.stootie.data.repository.CountryDetailRepository
 import dagger.Module
 import dagger.Provides
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Module
