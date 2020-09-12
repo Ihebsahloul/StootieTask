@@ -3,7 +3,7 @@ package com.stootie.task.countries
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.ProgressBar
 import android.widget.SearchView
 import android.widget.TextView
@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mtp.laboproject.view.adapter.CountriesListAdapter
-import com.myhexaville.simplerecyclerview.SimpleRecyclerView
 import com.stootie.domain.countries.model.Country
 import com.stootie.task.R
 import com.stootie.task.StootieApp
@@ -45,6 +44,14 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
         tvNoRecords = findViewById(R.id.no_records_tv)
         countriesRecyclerView = findViewById(R.id.countries_list_recycler_view)
 
+        val toolbar =
+            findViewById<Toolbar>(R.id.main_toolbar)
+        setSupportActionBar(toolbar)
+
+        // toolbar fancy stuff
+
+        // toolbar fancy stuff
+        supportActionBar!!.setDisplayHomeAsUpEnabled(false)
 
 
 
@@ -61,11 +68,15 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String): Boolean {
                 countriesListAdapter.filter.filter(newText)
+
+                countriesRecyclerView.adapter = CountriesListAdapter(applicationContext, countriesListAdapter.filtredListofCountries)
                 return false
             }
 
             override fun onQueryTextSubmit(query: String): Boolean {
                 countriesListAdapter.filter.filter(query)
+                countriesRecyclerView.adapter = CountriesListAdapter(applicationContext, countriesListAdapter.filtredListofCountries)
+
                 return false
             }
         })
@@ -74,11 +85,11 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-
+        menuInflater.inflate(R.menu.menu, menu)
         searchView = menu.findItem(R.id.search_view).actionView as SearchView
         searchView.queryHint = getString(R.string.search_hint)
         menu.findItem(R.id.search_view).isVisible = true
-        searchCountry(countriesAdapter)
+
         return true
     }
 
@@ -101,33 +112,36 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
 
         val llm = LinearLayoutManager(this)
         countriesAdapter = CountriesListAdapter(this,countries)
-        countriesRecyclerView.setLayoutManager(LinearLayoutManager(this))
-        countriesRecyclerView.setAdapter(CountriesListAdapter(this, countries))
-        //searchCountry(countriesAdapter)
+        countriesRecyclerView.layoutManager = LinearLayoutManager(this)
+        countriesRecyclerView.adapter = CountriesListAdapter(this, countries)
+        searchCountry(countriesAdapter)
         setSwipeRefresh(countries)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id: Int = item.itemId
+        return if (id == R.id.search_view) {
+            true
+        } else super.onOptionsItemSelected(item)
     }
 
     private fun setSwipeRefresh(countries: List<Country>) {
 
         swipeCountries.setProgressBackgroundColorSchemeColor(
             ContextCompat.getColor(
-                this!!,
+                this,
                 R.color.orange
             )
         )
         swipeCountries.setColorSchemeColors(Color.WHITE)
         swipeCountries.setOnRefreshListener {
-            countriesRecyclerView.setAdapter(CountriesListAdapter(this, countries))
+            countriesRecyclerView.adapter = CountriesListAdapter(this, countries)
             swipeCountries.isRefreshing = false
         }
     }
 
-
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-    }
 
 }
