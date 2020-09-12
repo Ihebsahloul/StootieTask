@@ -48,7 +48,6 @@
                             android:id="@+id/country_flag_iv"
                             android:layout_width="@dimen/dimen_50dp"
                             android:layout_height="@dimen/dimen_50dp"
-                            android:scaleType="center"
                             android:src="@mipmap/app_ic"
                              />
                     </RelativeLayout>

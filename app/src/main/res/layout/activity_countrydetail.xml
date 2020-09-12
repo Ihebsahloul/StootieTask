@@ -39,7 +39,6 @@
                     android:layout_width="@dimen/dimen_150dp"
                     android:layout_marginTop="@dimen/dimen_30dp"
                     android:layout_height="@dimen/dimen_150dp"
-                    android:scaleType="centerCrop"
                     android:layout_gravity="center"
                     android:src="@drawable/uae_flag"
                     />
@@ -83,7 +82,7 @@
                         android:layout_marginTop="@dimen/dimen_15dp"
                         android:layout_weight="0.1">
 
-                        <com.stootie.task.view.CircleImageView
+                        <ImageView
                             android:layout_width="@dimen/dimen_40dp"
                             android:layout_height="@dimen/dimen_40dp"
                             android:scaleType="center"
@@ -116,6 +115,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dimen_5dp"
                             android:layout_marginEnd="@dimen/dimen_20dp"
+                            android:layout_marginStart="@dimen/dimen_15dp"
                             android:ellipsize="end"
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="2"
@@ -158,10 +158,9 @@
                         android:layout_marginTop="@dimen/dimen_15dp"
                         android:layout_weight="0.1">
 
-                        <com.stootie.task.view.CircleImageView
+                        <ImageView
                             android:layout_width="@dimen/dimen_40dp"
                             android:layout_height="@dimen/dimen_40dp"
-                            android:scaleType="center"
                             android:src="@drawable/continent_ic"
                             />
                     </RelativeLayout>
@@ -192,6 +191,7 @@
                             android:layout_marginTop="@dimen/dimen_5dp"
                             android:layout_marginEnd="@dimen/dimen_20dp"
                             android:ellipsize="end"
+                            android:layout_marginStart="@dimen/dimen_15dp"
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="2"
                             android:text="@string/text_name_test"
@@ -233,10 +233,9 @@
                             android:layout_marginTop="@dimen/dimen_15dp"
                             android:layout_weight="0.1">
 
-                            <com.stootie.task.view.CircleImageView
+                            <ImageView
                                 android:layout_width="@dimen/dimen_40dp"
                                 android:layout_height="@dimen/dimen_40dp"
-                                android:scaleType="center"
                                 android:src="@drawable/population_ic"
                                 />
                         </RelativeLayout>
@@ -267,6 +266,7 @@
                                 android:layout_marginTop="@dimen/dimen_5dp"
                                 android:layout_marginEnd="@dimen/dimen_20dp"
                                 android:ellipsize="end"
+                                android:layout_marginStart="@dimen/dimen_15dp"
                                 android:fontFamily="@font/googlesans_medium"
                                 android:maxLines="2"
                                 android:text="@string/text_name_test"
@@ -308,10 +308,9 @@
                             android:layout_marginTop="@dimen/dimen_15dp"
                             android:layout_weight="0.1">
 
-                            <com.stootie.task.view.CircleImageView
+                            <ImageView
                                 android:layout_width="@dimen/dimen_40dp"
                                 android:layout_height="@dimen/dimen_40dp"
-                                android:scaleType="center"
                                 android:src="@drawable/continent_ic"
                                 />
                         </RelativeLayout>
@@ -344,6 +343,7 @@
                                 android:ellipsize="end"
                                 android:fontFamily="@font/googlesans_medium"
                                 android:maxLines="2"
+                                android:layout_marginStart="@dimen/dimen_15dp"
                                 android:text="@string/text_name_test"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/dimen_15sp"
@@ -383,10 +383,9 @@
                             android:layout_marginTop="@dimen/dimen_15dp"
                             android:layout_weight="0.1">
 
-                            <com.stootie.task.view.CircleImageView
+                            <ImageView
                                 android:layout_width="@dimen/dimen_40dp"
                                 android:layout_height="@dimen/dimen_40dp"
-                                android:scaleType="center"
                                 android:src="@drawable/currency_ic"
                                 />
                         </RelativeLayout>
@@ -419,6 +418,7 @@
                                 android:ellipsize="end"
                                 android:fontFamily="@font/googlesans_medium"
                                 android:maxLines="2"
+                                android:layout_marginStart="@dimen/dimen_15dp"
                                 android:text="@string/text_name_test"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/dimen_15sp"
@@ -458,10 +458,9 @@
                             android:layout_marginTop="@dimen/dimen_15dp"
                             android:layout_weight="0.1">
 
-                            <com.stootie.task.view.CircleImageView
+                            <ImageView
                                 android:layout_width="@dimen/dimen_40dp"
                                 android:layout_height="@dimen/dimen_40dp"
-                                android:scaleType="center"
                                 android:src="@drawable/language_ic"
                                 />
                         </RelativeLayout>
@@ -495,6 +494,7 @@
                                 android:fontFamily="@font/googlesans_medium"
                                 android:maxLines="2"
                                 android:text="@string/text_name_test"
+                                android:layout_marginStart="@dimen/dimen_15dp"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/dimen_15sp"
                                 android:visibility="visible" />
@@ -533,10 +533,9 @@
                             android:layout_marginTop="@dimen/dimen_15dp"
                             android:layout_weight="0.1">
 
-                            <com.stootie.task.view.CircleImageView
+                            <ImageView
                                 android:layout_width="@dimen/dimen_40dp"
                                 android:layout_height="@dimen/dimen_40dp"
-                                android:scaleType="center"
                                 android:src="@drawable/callcode_ic"
                                 />
                         </RelativeLayout>
@@ -573,6 +572,7 @@
                                 android:maxLines="2"
                                 android:text="@string/text_name_test"
                                 android:textColor="@color/black"
+                                android:layout_marginStart="@dimen/dimen_15dp"
                                 android:textSize="@dimen/dimen_15sp"
                                 android:visibility="visible" />
 
