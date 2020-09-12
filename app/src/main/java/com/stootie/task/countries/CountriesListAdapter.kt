@@ -48,19 +48,9 @@ class CountriesListAdapter(private val context: Context,
         }
     }
 
-
     override fun getItemCount(): Int {
         return filtredListofCountries.size
     }
-
-   /* override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
-        DataBindingUtil.inflate(
-            LayoutInflater.from(parent.context),
-            R.layout.list_item_country,
-            parent,
-            false
-        )
-    )*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -68,11 +58,7 @@ class CountriesListAdapter(private val context: Context,
         )
     }
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        /*holder.itemLayout.country_name_tv.text =
-            filtredListofCountries[position].name*/
-
         val country : Country = filtredListofCountries.get(position)
         val countryNumeric : String? = position.toString()
         val countryName : String? = country.name
@@ -104,7 +90,6 @@ class CountriesListAdapter(private val context: Context,
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         // Holds the TextView that will add each country
-
         val countryNameTv = view.country_name_tv
         val itemLayout = view.viewCard_country
         val countryRegionTv = view.country_region_tv
