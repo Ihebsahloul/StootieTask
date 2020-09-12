@@ -4,6 +4,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorPrimaryDark">#7C4B97</color>
     <color name="black_transparent_gradient">#99000000</color>
+    <color name="toolbar_color">#99000000</color>
 
     <color name="color_accent">#6B6B6B</color>
 
@@ -30,7 +31,7 @@
     <color name="underline_color">#8d8d8d</color>
 
     <color name="green">#62B700</color>
-    <color name="orange">#FF9800</color>
+    <color name="orange">#FF3C00</color>
     <color name="gray">#9B9B9B</color>
     <color name="btn_grey_color">#D8D8D8</color>
     <color name="bg_gift_item_color">#F4F4F4</color>

@@ -1,13 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        app:title="@string/stootie_text"
+        android:layout_width="match_parent"
+        app:logo="@drawable/stootie_logo"
+        android:background="@color/white"
+        app:menu="@menu/menu"
+        android:layout_height="wrap_content"/>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipeCountries"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:fontFamily="@font/googlesans_bold"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:text="@string/all_around_the_world_text"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_23sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/countries_list_recycler_view"
-        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/no_records_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone" />
+
+
+</LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

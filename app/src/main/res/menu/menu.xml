@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    <!-- Search Widget -->
+
+    <item android:id="@+id/search_view"
+        android:title="@string/search_text"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView" />
+</menu>

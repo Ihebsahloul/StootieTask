@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">StootieApp</string>
+    <string name="all_around_the_world_text">All around the world</string>
+    <string name="stootie_text">Stootie</string>
+    <string name="search_text">Search</string>
+    <string name="search_hint">Search a country ...</string>
+    <string name="text_name_test">1 United States of America</string>
+    <string name="test_region_text">America</string>
 </resources>
