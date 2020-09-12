@@ -28,12 +28,13 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
     private lateinit var countriesAdapter: CountriesListAdapter
     private lateinit var tvNoRecords: TextView
     private lateinit var countriesRecyclerView: RecyclerView
-    private lateinit var progressBar: ProgressBar
     private lateinit var searchView: SearchView
+
     private lateinit var toolbar: Toolbar
     private lateinit var countriesDisposable: Disposable
     private var isLoading: Boolean = false
     private var isLastPage: Boolean = false
+    private lateinit var progressBar: ProgressBar
     private var currentPage: Int = 1
     private val totalPages: Int = 3
     override fun getLayout(): Int = R.layout.activity_countries
@@ -142,37 +143,27 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
             swipeCountries.isRefreshing = false
         }
     }
+
+   /* private fun setCountries(countriesList: ArrayList<Country>) {
+        if (currentPage == 1) {
+            countriesAdapter.setCountries(countriesList)
+            countriesListAdapter.addLoadingFooter()
+            countriesListAdapter.notifyDataSetChanged()
+            if (currentPage == totalPages) {
+                countriesListAdapter.removeLoadingFooter()
+                isLastPage = true
+            }
+        } else {
+            if (!countriesList.isEmpty()) {
+                countriesListAdapter.removeLoadingFooter()
+                isLoading = false
+                countriesListAdapter.addAll(countriesList)
+                countriesListAdapter.addLoadingFooter()
+            } else {
+                countriesListAdapter.removeLoadingFooter()
+                isLoading = false
+                isLastPage = true
+            }
+        }
+    }*/
 }
-   /* override fun onSaveInstanceState(savedInstanceState: Bundle) {
-        // Save UI state changes to the savedInstanceState.
-        // This bundle will be passed to onCreate if the process is
-        // killed and restarted.
-        savedInstanceState.putParcelableArrayList("movie_data", cou);
-        //call super to commit your changes
-        super.onSaveInstanceState(savedInstanceState);
-    }
-
-    fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        columns = resources.getInteger(R.integer.gallery_columns)
-        if (mBundleRecyclerViewState != null) {
-            Handler().postDelayed(Runnable {
-                mListState = mBundleRecyclerViewState.getParcelable(KEY_RECYCLER_STATE)
-                mRecyclerView.getLayoutManager().onRestoreInstanceState(mListState)
-            }, 50)
-        }
-
-        // Checks the orientation of the screen
-        if (newConfig.orientation === Configuration.ORIENTATION_LANDSCAPE) {
-            gridLayoutManager.setSpanCount(columns)
-        } else if (newConfig.orientation === Configuration.ORIENTATION_PORTRAIT) {
-            gridLayoutManager.setSpanCount(columns)
-        }
-        mRecyclerView.setLayoutManager(gridLayoutManager)
-    }
-
-    //this saves the data to a temporary storage
-
-
-
-}*/
