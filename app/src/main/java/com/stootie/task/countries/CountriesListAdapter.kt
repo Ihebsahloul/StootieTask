@@ -65,7 +65,7 @@ class CountriesListAdapter(private val context: Context,
         val countryRegion : String? = country.region
         val countryFlag : String? = country.flag
         val dot   = "."
-        val nameText : String? ="$countryNumeric $dot  ${ countryName}"
+        val nameText : String? ="$countryNumeric$dot  ${countryName}"
         holder.countryNameTv?.text = nameText
         holder.countryRegionTv?.text = countryRegion
         val flagUri = Uri.parse(countryFlag)

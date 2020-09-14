@@ -1,20 +1,21 @@
 # Stootie App
-> This is an android application for evaluation purpose only! It is mainly about displaying the whole world countries with search feature and showing each coutnry's details and informations.
+> This is an android application for evaluation purpose only! It is mainly about displaying the whole world countries with search feature and showing each country's details and information.
 
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
-* [Technologies](#Android Framework , KOTLIN , RxJava , Dagger2 , GlideToVectorYou , Retrofit , JUnit ,Powermock  Mockito)
-* [Setup](#Run project on Android Studio version 3+ )
+* [Technologies](#Technologies)
+* [Setup](#Setup)
 * [Features](#features)
-* [Status](#Beta version)
-* [Inspiration](#Google Apps package )
-* [Contact](#Iheb SAHLOUL )
+* [Status](#Status)
+* [Inspiration](#Inspiration)
+* [Contact](#Contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This is an Android app that works on most of Android OS running terminals. It allows user to display the countries details and general information.
 
 ## Screenshots
+![Example screenshot](./screenshots/countriesList.png)(./screenshots/countryDetail.png)
 
 ## Technologies
 * KOTLIN - version 1.0
@@ -30,13 +31,12 @@ Add more general information about project. What the purpose of the project is? 
 
 
 ## Setup
-Install Android Studio version 3+
-Install JDK and necessary SDKs versions
-Get project from version Control Github
+* Install Android Studio version 3+
+* Install JDK and necessary SDKs versions
+* Get project from version Control Github
 
 
 ## Code Examples
-Show examples of usage:
 ` override fun getFilter(): Filter {
          return object : Filter() {
              override fun performFiltering(p0: CharSequence?): FilterResults {
@@ -65,17 +65,17 @@ Show examples of usage:
 
 To-do list:
 * improve Search feature
-* implement paging feature when scrolling the counrties list
+* implement paging feature when scrolling the countries list
 
 ## Status
 Project is: Finished
 
 ## Inspiration
-This app is inspired by the new Google UI/UX recommandations and best practices
+This app is inspired by the new Google UI/UX recommendations and best practices
 
 ## Contact
 Created by Iheb SAHLOUL
-           ihebsahloul@hotmail.fr/isahloul@mail.com
+           ihebsahloul@hotmail.fr/isahloul@gmail.com
            (Tunisia): (+216) 28 796 295
            (France):  (+33) 977 215 250
            https://www.linkedin.com/in/iheb-sahloul-6b2b41aa/

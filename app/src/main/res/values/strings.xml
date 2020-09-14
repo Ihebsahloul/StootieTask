@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">StootieApp</string>
+    <string name="app_name">Stootie App</string>
     <string name="all_around_the_world_text">All around the world</string>
     <string name="stootie_text">Stootie</string>
     <string name="search_text">Search</string>
-    <string name="search_hint">Search a country ...</string>
+    <string name="search_hint">Search a country …</string>
     <string name="text_name_test">About United States of America</string>
     <string name="test_region_text">America</string>
     <string name="capital_title">Capital</string>
@@ -13,5 +13,5 @@
     <string name="language_title">Language</string>
     <string name="currency_title">Currency</string>
     <string name="call_code_title">Call Code</string>
-    <string name="error_text">An error ocurred, please try again.</string>
+    <string name="error_text">An error occurred, please try again.</string>
 </resources>

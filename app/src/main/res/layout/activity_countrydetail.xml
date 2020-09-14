@@ -43,7 +43,6 @@
                     android:layout_width="@dimen/dimen_150dp"
                     android:layout_marginTop="@dimen/dimen_30dp"
                     android:layout_height="@dimen/dimen_150dp"
-                    android:src="@drawable/stootie_logo"
                     android:layout_gravity="center"
                     />
                 <TextView
@@ -65,7 +64,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_3dp"
+                    android:layout_height="@dimen/dimen_1dp"
                     android:background="@color/grey"
                     android:layout_marginBottom="@dimen/dimen_20dp"
                     android:orientation="vertical"/>
@@ -95,8 +94,8 @@
                         android:layout_weight="0.1">
 
                         <ImageView
-                            android:layout_width="@dimen/dimen_40dp"
-                            android:layout_height="@dimen/dimen_40dp"
+                            android:layout_width="@dimen/dimen_35dp"
+                            android:layout_height="@dimen/dimen_35dp"
                             android:scaleType="centerInside"
                             android:src="@drawable/capital_ic"
                             />
@@ -132,7 +131,7 @@
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="2"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_15sp"
+                            android:textSize="@dimen/dimen_17sp"
                             android:visibility="visible" />
 
 
@@ -170,8 +169,8 @@
                         android:layout_weight="0.1">
 
                         <ImageView
-                            android:layout_width="@dimen/dimen_40dp"
-                            android:layout_height="@dimen/dimen_40dp"
+                            android:layout_width="@dimen/dimen_35dp"
+                            android:layout_height="@dimen/dimen_35dp"
                             android:src="@drawable/continent_ic"
                             />
                     </RelativeLayout>
@@ -206,7 +205,7 @@
                             android:fontFamily="@font/googlesans_medium"
                             android:maxLines="2"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/dimen_15sp"
+                            android:textSize="@dimen/dimen_17sp"
                             android:visibility="visible" />
 
 
@@ -244,8 +243,8 @@
                             android:layout_weight="0.1">
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_40dp"
-                                android:layout_height="@dimen/dimen_40dp"
+                                android:layout_width="@dimen/dimen_35dp"
+                                android:layout_height="@dimen/dimen_35dp"
                                 android:src="@drawable/population_ic"
                                 />
                         </RelativeLayout>
@@ -280,7 +279,7 @@
                                 android:fontFamily="@font/googlesans_medium"
                                 android:maxLines="2"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/dimen_15sp"
+                                android:textSize="@dimen/dimen_17sp"
                                 android:visibility="visible" />
 
 
@@ -318,8 +317,8 @@
                             android:layout_weight="0.1">
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_40dp"
-                                android:layout_height="@dimen/dimen_40dp"
+                                android:layout_width="@dimen/dimen_35dp"
+                                android:layout_height="@dimen/dimen_35dp"
                                 android:src="@drawable/area_ic"
                                 />
                         </RelativeLayout>
@@ -354,7 +353,7 @@
                                 android:maxLines="2"
                                 android:layout_marginStart="@dimen/dimen_15dp"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/dimen_15sp"
+                                android:textSize="@dimen/dimen_17sp"
                                 android:visibility="visible" />
 
 
@@ -392,8 +391,8 @@
                             android:layout_weight="0.1">
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_40dp"
-                                android:layout_height="@dimen/dimen_40dp"
+                                android:layout_width="@dimen/dimen_35dp"
+                                android:layout_height="@dimen/dimen_35dp"
                                 android:src="@drawable/language_ic"
                                 />
                         </RelativeLayout>
@@ -428,7 +427,7 @@
                                 android:maxLines="2"
                                 android:layout_marginStart="@dimen/dimen_15dp"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/dimen_15sp"
+                                android:textSize="@dimen/dimen_17sp"
                                 android:visibility="visible" />
 
 
@@ -466,8 +465,8 @@
                             android:layout_weight="0.1">
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_40dp"
-                                android:layout_height="@dimen/dimen_40dp"
+                                android:layout_width="@dimen/dimen_35dp"
+                                android:layout_height="@dimen/dimen_35dp"
                                 android:src="@drawable/currency_ic"
                                 />
                         </RelativeLayout>
@@ -502,7 +501,7 @@
                                 android:maxLines="2"
                                 android:layout_marginStart="@dimen/dimen_15dp"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/dimen_15sp"
+                                android:textSize="@dimen/dimen_17sp"
                                 android:visibility="visible" />
 
 
@@ -540,8 +539,8 @@
                             android:layout_weight="0.1">
 
                             <ImageView
-                                android:layout_width="@dimen/dimen_40dp"
-                                android:layout_height="@dimen/dimen_40dp"
+                                android:layout_width="@dimen/dimen_35dp"
+                                android:layout_height="@dimen/dimen_35dp"
                                 android:src="@drawable/callcode_ic"
                                 />
                         </RelativeLayout>
@@ -578,7 +577,7 @@
                                 android:maxLines="2"
                                 android:textColor="@color/black"
                                 android:layout_marginStart="@dimen/dimen_15dp"
-                                android:textSize="@dimen/dimen_15sp"
+                                android:textSize="@dimen/dimen_17sp"
                                 android:visibility="visible" />
 
 

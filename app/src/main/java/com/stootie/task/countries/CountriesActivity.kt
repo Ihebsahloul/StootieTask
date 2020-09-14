@@ -118,7 +118,7 @@ class CountriesActivity : CleanActivity <CountriesPresenter>(), CountriesView {
         val snackBarView = snackBar.view
         snackBarView.setBackgroundColor(resources.getColor(R.color.black))
         val textView = snackBarView.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
-        textView.setTextColor(Color.BLUE)
+        textView.setTextColor(Color.WHITE)
         snackBar.show()
     }
 
