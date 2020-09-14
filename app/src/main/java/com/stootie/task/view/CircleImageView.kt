@@ -418,7 +418,7 @@ class CircleImageView : AppCompatImageView {
         private val BITMAP_CONFIG = Bitmap.Config.ARGB_8888
         private const val COLORDRAWABLE_DIMENSION = 2
 
-        private const val DEFAULT_BORDER_WIDTH = 0
+        private const val DEFAULT_BORDER_WIDTH = 3
         private const val DEFAULT_BORDER_COLOR = Color.BLACK
         private const val DEFAULT_CIRCLE_BACKGROUND_COLOR = Color.TRANSPARENT
         private const val DEFAULT_BORDER_OVERLAY = false

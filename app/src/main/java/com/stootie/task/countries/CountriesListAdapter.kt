@@ -30,7 +30,7 @@ class CountriesListAdapter(private val context: Context,
                 else {
                     resultListOfSearch.clear()
                     countries.forEach {
-                        if (it.toString().toLowerCase().contains(p0.toString()))
+                        if (it.name.toString().toLowerCase().contains(p0.toString()))
                             resultListOfSearch.add(it)
                     }
                     resultListOfSearch
@@ -60,7 +60,7 @@ class CountriesListAdapter(private val context: Context,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val country : Country = filtredListofCountries.get(position)
-        val countryNumeric : String? = position.toString()
+        val countryNumeric = position +1
         val countryName : String? = country.name
         val countryRegion : String? = country.region
         val countryFlag : String? = country.flag
