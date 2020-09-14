@@ -15,7 +15,8 @@
 This is an Android app that works on most of Android OS running terminals. It allows user to display the countries details and general information.
 
 ## Screenshots
-![Example screenshot](./screenshots/countriesList.png)(./screenshots/countryDetail.png)
+![Example screenshot](./screenshots/countriesList.png)
+![Example screenshot](./screenshots/countryDetail.png)
 
 ## Technologies
 * KOTLIN - version 1.0
@@ -37,30 +38,31 @@ This is an Android app that works on most of Android OS running terminals. It al
 
 
 ## Code Examples
-` override fun getFilter(): Filter {
-         return object : Filter() {
-             override fun performFiltering(p0: CharSequence?): FilterResults {
-                 filtredListofCountries = if (p0.isNullOrEmpty())
-                     countries
-                 else {
-                     resultListOfSearch.clear()
-                     countries.forEach {
-                         if (it.name.toString().toLowerCase().contains(p0.toString()))
-                             resultListOfSearch.add(it)
-                     }
-                     resultListOfSearch
-                 }
-                 var filtredResult = FilterResults()
-                 filtredResult.values = filtredListofCountries
-                 return filtredResult
-             }
+`  @Test
+   fun `should init view`() {
+     presenter.initialise()
+     verify(view).initialiseView()
+   }
 
-             override fun publishResults(p0: CharSequence?, filtredResult: FilterResults?) {
-                 filtredListofCountries = listOf()
-                 filtredListofCountries = filtredResult!!.values as List<Country>
-                 notifyDataSetChanged()
-             }
-         }`
+   @Test
+   fun `should dispose subscription`() {
+     presenter.disposeSubscriptions()
+     verify(getCountriesListUseCase).dispose()
+   }
+
+   @Test
+   fun `should execute usecase when initialise is invoked`() {
+     presenter.initialise()
+     verify(getCountriesListUseCase).execute(any(CountriesListObserver::class.java), ArgumentMatchers.isNull())
+   }
+
+   @Test
+   fun `should set articles list to view`() {
+     val list = emptyList<Country>()
+     presenter.showCountriesList(list)
+     verify(view).showCountriesList(list)
+   }
+ }`
 
 
 To-do list:

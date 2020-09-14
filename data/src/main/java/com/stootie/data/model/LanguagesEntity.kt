@@ -26,10 +26,9 @@ data class LanguagesEntity (
 		parcel.readString()!!,
 		parcel.readString()!!,
 		parcel.readString()!!
-	) {
-	}
+	)
 
-	override fun writeToParcel(parcel: Parcel, flags: Int) {
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
 		parcel.writeString(iso639_1)
 		parcel.writeString(iso639_2)
 		parcel.writeString(name)

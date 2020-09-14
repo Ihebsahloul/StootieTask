@@ -10,20 +10,11 @@ class Constants {
     }
 
 
-    object Urls {
+    object Urls
 
-    }
+    object Requests
 
-    object Requests {
-
-
-
-    }
-
-    object Parameters {
-
-
-    }
+    object Parameters
 
     object EndPoints {
         const val ALL_COUNTRIES  = "all"
@@ -32,10 +23,6 @@ class Constants {
 
 
 
-    object Variants {
-
-
-
-    }
+    object Variants
 
 }

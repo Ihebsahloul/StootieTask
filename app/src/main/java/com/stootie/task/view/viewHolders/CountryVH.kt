@@ -44,13 +44,13 @@ class CountryVH(itemView: View,private val countries: List<Country>) : BaseVH(it
         val countryRegion : String? = country.region
         val countryFlag : String? = country.flag
         val nameText : String? ="$countryNumeric ${countryName}"
-        countryNameTv?.text = nameText
-        countryRegionTv?.text = countryRegion
+        countryNameTv.text = nameText
+        countryRegionTv.text = countryRegion
         val flagUri = Uri.parse(countryFlag)
         GlideToVectorYou
             .init()
             .with(getContext())
-            .load(flagUri, countryFlagIv);
+            .load(flagUri, countryFlagIv)
         itemLayout.setOnClickListener {
             navigateToCountryDetail(position)
         }
@@ -58,7 +58,7 @@ class CountryVH(itemView: View,private val countries: List<Country>) : BaseVH(it
 
     private fun navigateToCountryDetail(position: Int) {
 
-        countries[position]?.let {
+        countries[position].let {
             val value: Country? = countries.get(position)
             val intent = Intent(getContext(), CountryDetailActivity::class.java)
             intent.putExtra("country", value)

@@ -79,10 +79,10 @@ class CountriesListAdapter(private val context: Context,
 
     }
     private fun navigateToCountryDetail(country: Country) {
-        country?.let {
+        country.let {
             val value: Country? = country
             val intent = Intent(context, CountryDetailActivity::class.java)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             intent.putExtra("country", value)
             context.startActivity( intent)
         }

@@ -24,10 +24,9 @@ data class CurrenciesEntity (
 		parcel.readString()!!,
 		parcel.readString()!!,
 		parcel.readString()!!
-	) {
-	}
+	)
 
-	override fun writeToParcel(parcel: Parcel, flags: Int) {
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
 		parcel.writeString(code)
 		parcel.writeString(name)
 		parcel.writeString(symbol)
