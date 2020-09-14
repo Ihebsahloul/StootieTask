@@ -14,4 +14,5 @@
     <string name="currency_title">Currency</string>
     <string name="call_code_title">Call Code</string>
     <string name="error_text">An error occurred, please try again.</string>
+    <string name="example_numeric_text">1.</string>
 </resources>

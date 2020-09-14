@@ -65,8 +65,9 @@ class CountriesListAdapter(private val context: Context,
         val countryRegion : String? = country.region
         val countryFlag : String? = country.flag
         val dot   = "."
-        val nameText : String? ="$countryNumeric$dot  ${countryName}"
-        holder.countryNameTv?.text = nameText
+        val numerciText : String? ="$countryNumeric$dot"
+        holder.countryNumericTv?.text = numerciText
+        holder.countryNameTv?.text = countryName
         holder.countryRegionTv?.text = countryRegion
         val flagUri = Uri.parse(countryFlag)
         GlideToVectorYou
@@ -94,6 +95,7 @@ class CountriesListAdapter(private val context: Context,
         val countryNameTv = view.country_name_tv
         val itemLayout = view.viewCard_country
         val countryRegionTv = view.country_region_tv
+        val countryNumericTv = view.country_numeric_tv
         val countryFlagIv = view.country_flag_iv
 
     }

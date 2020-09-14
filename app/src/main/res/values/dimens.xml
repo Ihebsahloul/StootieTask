@@ -276,6 +276,7 @@
     <dimen name="dimen_32sp">32</dimen>
     <dimen name="dimen_220dp">220dp</dimen>
     <dimen name="dimen_190dp">190dp</dimen>
+    <dimen name="dimen_42dp">42dp</dimen>
 
 
 </resources>
